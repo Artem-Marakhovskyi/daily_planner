@@ -1,7 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DailyPlanner.Dal\DailyPlanner.Dal.csproj" />
+    <ProjectReference Include="..\DailyPlanner.Dto\DailyPlanner.Dto.csproj" />
+    <ProjectReference Include="..\DailyPlanner.Infrastructure\DailyPlanner.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>
