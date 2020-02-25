@@ -8,7 +8,7 @@ namespace DailyPlanner.Dal
     {
         private readonly DbContext _context;
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(PlannerContext context)
         {
             _context = context;
         }

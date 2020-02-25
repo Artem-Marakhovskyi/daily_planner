@@ -13,7 +13,7 @@ namespace DailyPlanner.Dal
     {
         private readonly DbContext _context;
 
-        public Repository(DbContext context)
+        public Repository(PlannerContext context)
         {
             _context = context;
         }
