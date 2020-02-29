@@ -7,7 +7,7 @@ namespace DailyPlanner.Entities.Reminders
         /// <summary>
         /// Reference to <see cref="Person"/>. They send reminder.
         /// </summary>
-        public Guid CreatorId { get; set; }
+        public Guid SenderId { get; set; }
 
         /// <summary>
         /// Reference to <see cref="Person"/>. They receive reminder.
@@ -18,5 +18,11 @@ namespace DailyPlanner.Entities.Reminders
         /// Reference to <see cref="Reminder"/>. What is actually shared.
         /// </summary>
         public Guid ReminderId { get; set; }
+
+        public Reminder Reminder { get; set; }
+
+        public Person Sender { get; set; }
+
+        public Person Receiver { get; set; }
     }
 }

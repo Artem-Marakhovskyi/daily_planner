@@ -16,5 +16,9 @@ namespace DailyPlanner.Entities.Notes
         /// Reference to <see cref="Tag"/>
         /// </summary>
         public Guid TagId { get; set; }
+
+        public Tag Tag { get; set; }
+
+        public virtual Person Creator { get; set; }
     }
 }

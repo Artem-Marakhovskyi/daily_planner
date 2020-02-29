@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace DailyPlanner.Entities.Reminders
 {
     public class Reminder : Entity
@@ -16,5 +18,11 @@ namespace DailyPlanner.Entities.Reminders
         /// Reference to <see cref="Tag"/>
         /// </summary>
         public Guid TagId { get; set; }
+
+        public Tag Tag { get; set; }
+
+        public virtual ICollection<ReminderSharing> ReminderSharings { get; set; }
+
+        public Person Creator { get; set; }
     }
 }

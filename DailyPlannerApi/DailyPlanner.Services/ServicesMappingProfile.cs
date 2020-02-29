@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DailyPlanner.Dto.Notes;
+using DailyPlanner.Entities;
 using DailyPlanner.Entities.Notes;
 
 namespace DailyPlanner.Services
@@ -14,6 +15,7 @@ namespace DailyPlanner.Services
         private void CreateEntitiesMaps()
         {
             CreateMap<Note, NoteDto>().ReverseMap();
+            CreateMap<Person, PersonDto>().ReverseMap();
         }
     }
 }

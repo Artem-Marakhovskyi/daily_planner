@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner.Entities", "DailyPlanner.Entities\DailyPlanner.Entities.csproj", "{74A25BCF-6867-4E89-9371-4A45FD0CEAA8}"
 EndProject
@@ -12,15 +12,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner.Dal", "DailyPl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner.Dto", "DailyPlanner.Dto\DailyPlanner.Dto.csproj", "{6B221179-AA44-479D-9B81-B8C8E5E7CB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyPlanner.Api", "DailyPlanner.Api\DailyPlanner.Api.csproj", "{F4AE5966-E3C9-43AB-9DEF-B3F13D4B85FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner.Api", "DailyPlanner.Api\DailyPlanner.Api.csproj", "{F4AE5966-E3C9-43AB-9DEF-B3F13D4B85FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{0C967791-6DBD-4644-8EF7-234C89CB2569}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layers", "Layers", "{12E286E6-7F34-436B-9614-AFC6EA9D5F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyPlanner.Ioc", "DailyPlanner.Ioc\DailyPlanner.Ioc.csproj", "{56B7E1FB-77CE-45F9-970A-615756211806}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyPlanner.Ioc", "DailyPlanner.Ioc\DailyPlanner.Ioc.csproj", "{56B7E1FB-77CE-45F9-970A-615756211806}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross", "Cross", "{DBD01848-F353-4A0D-9158-18949994406C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyPlanner.Console", "DailyPlanner.Console\DailyPlanner.Console.csproj", "{7822E8B1-7CC1-4390-B263-F2B92DDD10B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{56B7E1FB-77CE-45F9-970A-615756211806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56B7E1FB-77CE-45F9-970A-615756211806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56B7E1FB-77CE-45F9-970A-615756211806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7822E8B1-7CC1-4390-B263-F2B92DDD10B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7822E8B1-7CC1-4390-B263-F2B92DDD10B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7822E8B1-7CC1-4390-B263-F2B92DDD10B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7822E8B1-7CC1-4390-B263-F2B92DDD10B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

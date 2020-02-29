@@ -1,6 +1,7 @@
 ﻿using DailyPlanner.Dal;
 using DailyPlanner.Entities;
 using DailyPlanner.Entities.Notes;
+using DailyPlanner.Infrastructure;
 using DailyPlanner.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +32,7 @@ namespace DailyPlanner.Ioc
         {
             serviceCollection.AddScoped<IRepository<Tag>, Repository<Tag>>();
             serviceCollection.AddScoped<IRepository<Note>, Repository<Note>>();
+            serviceCollection.AddScoped<IRepository<Person>, Repository<Person>>();
 
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
         }
@@ -38,6 +40,8 @@ namespace DailyPlanner.Ioc
         private static void RegisterServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<INotesService, NotesService>();
+            serviceCollection.AddScoped<IPersonService, PersonService>();
+            serviceCollection.AddScoped<IPasswordHashManager, PasswordHashManager>();
         }
     }
 }

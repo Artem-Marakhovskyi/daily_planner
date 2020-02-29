@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DailyPlanner.Entities.Calendar
 {
@@ -17,9 +18,15 @@ namespace DailyPlanner.Entities.Calendar
         /// </summary>
         public Guid CreatorId { get; set; }
 
+        public Person Creator { get; set; }
+
         /// <summary>
         /// Reference to <see cref="Tag"/>.
         /// </summary>
         public Guid TagId { get; set; }
+
+        public Tag Tag { get; set; }
+
+        public virtual ICollection<EventSharing> EventSharings { get; set; }
     }
 }
