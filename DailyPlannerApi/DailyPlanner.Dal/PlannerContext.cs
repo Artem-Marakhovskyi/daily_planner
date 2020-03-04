@@ -4,7 +4,6 @@ using DailyPlanner.Entities.Chat;
 using DailyPlanner.Entities.Notes;
 using DailyPlanner.Entities.Reminders;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace DailyPlanner.Dal
 {

@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using DailyPlanner.Api.ViewDtos;
-using DailyPlanner.Dto.Notes;
-using System;
 
 namespace DailyPlanner.Api
 {

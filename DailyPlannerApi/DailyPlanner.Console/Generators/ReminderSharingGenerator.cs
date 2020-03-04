@@ -3,7 +3,6 @@ using DailyPlanner.Entities.Reminders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DailyPlanner.Console.Generators
 {

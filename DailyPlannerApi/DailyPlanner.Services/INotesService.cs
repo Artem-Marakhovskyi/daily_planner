@@ -9,7 +9,7 @@ namespace DailyPlanner.Services
     {
         Task<IEnumerable<NoteDto>> GetAsync(Guid creatorId);
 
-        Task UpsertAsync(IEnumerable<NoteDto> noteDto);
+        Task<IEnumerable<NoteDto>> UpsertAsync(IEnumerable<NoteDto> noteDto);
 
         Task RemoveAsync(IEnumerable<Guid> noteIds);
     }

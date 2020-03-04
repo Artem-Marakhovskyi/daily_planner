@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using DailyPlanner.Dal;
-using DailyPlanner.Dto.Notes;
+using DailyPlanner.Dto;
 using DailyPlanner.Entities;
 using DailyPlanner.Infrastructure;
 using DailyPlanner.Services.Exceptions;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 

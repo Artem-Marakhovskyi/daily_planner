@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DailyPlanner.Dto;
 using DailyPlanner.Dto.Notes;
 using DailyPlanner.Entities;
 using DailyPlanner.Entities.Notes;

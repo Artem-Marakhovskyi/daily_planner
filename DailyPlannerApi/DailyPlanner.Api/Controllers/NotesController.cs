@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using DailyPlanner.Dto.Notes;
 using DailyPlanner.Services;
@@ -29,7 +28,6 @@ namespace DailyPlanner.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<NoteDto>> Get()
         {
-            
             var notes = await _notesService.GetAsync(HttpContext.User.GetId().Value);
 
             return notes;
@@ -44,11 +42,11 @@ namespace DailyPlanner.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<StatusCodeResult> Post(IEnumerable<NoteDto> noteDtos)
+        public async Task<object> Post(IEnumerable<NoteDto> noteDtos)
         {
-            await _notesService.UpsertAsync(noteDtos);
+            var newNotes = await _notesService.UpsertAsync(noteDtos);
 
-            return Ok();
+            return Ok(newNotes);
         }
     }
 }

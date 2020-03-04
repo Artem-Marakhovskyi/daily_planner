@@ -6,9 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using DailyPlanner.Api.ViewDtos;
-using DailyPlanner.Dto.Notes;
+using DailyPlanner.Dto;
 using DailyPlanner.Services;
-using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 

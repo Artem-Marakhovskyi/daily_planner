@@ -1,8 +1,5 @@
 ﻿using DailyPlanner.Console.Generators.SimpleGenerators;
 using DailyPlanner.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DailyPlanner.Console.Generators
 {

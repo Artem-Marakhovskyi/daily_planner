@@ -1,11 +1,4 @@
-﻿using DailyPlanner.Api.Validation;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace DailyPlanner.Api.ViewDtos
+﻿namespace DailyPlanner.Api.ViewDtos
 {
     public class PersonRegisterDto
     {

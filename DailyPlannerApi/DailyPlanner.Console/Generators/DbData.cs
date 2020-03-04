@@ -3,9 +3,7 @@ using DailyPlanner.Entities.Calendar;
 using DailyPlanner.Entities.Chat;
 using DailyPlanner.Entities.Notes;
 using DailyPlanner.Entities.Reminders;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DailyPlanner.Console.Generators
 {

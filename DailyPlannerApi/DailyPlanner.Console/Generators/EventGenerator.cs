@@ -3,7 +3,6 @@ using DailyPlanner.Entities;
 using DailyPlanner.Entities.Calendar;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DailyPlanner.Console.Generators
 {

@@ -6,7 +6,6 @@ using DailyPlanner.Entities.Notes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DailyPlanner.Services
@@ -56,8 +55,10 @@ namespace DailyPlanner.Services
             await _uof.CommitAsync();
         }
 
-        public async Task UpsertAsync(IEnumerable<NoteDto> noteDtos)
+        public async Task<IEnumerable<NoteDto>> UpsertAsync(IEnumerable<NoteDto> noteDtos)
         {
+            var newlyCreatedNotes = new List<Note>();
+
             var tags = await _tagRepository.GetAsync();
 
             foreach (var noteDto in noteDtos)
@@ -65,10 +66,28 @@ namespace DailyPlanner.Services
                 var note = _mapper.Map<Note>(noteDto);
                 note.TagId = tags.First(t => t.Description == noteDto.Tag).Id;
                 
-                _notesRepository.Upsert(note);
+                newlyCreatedNotes.Add(_notesRepository.Upsert(note));
             }
 
             await _uof.CommitAsync();
+
+            var dtos = new List<NoteDto>();
+            foreach (var createdNote in newlyCreatedNotes)
+            {
+                dtos.Add(
+                    _mapper.Map<NoteDto>(
+                        createdNote,
+                        opt => opt.AfterMap(
+                            (src, dest) =>
+                            {
+                                var d = dest as NoteDto;
+                                d.Tag = tags.First(e => e.Id == (src as Note).TagId).Description;
+                            }
+                        ))
+                    );
+            }
+
+            return dtos;
         }
     }
 }

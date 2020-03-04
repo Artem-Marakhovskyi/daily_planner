@@ -1,4 +1,4 @@
-﻿using DailyPlanner.Dto.Notes;
+﻿using DailyPlanner.Dto;
 using System.Threading.Tasks;
 
 namespace DailyPlanner.Services
