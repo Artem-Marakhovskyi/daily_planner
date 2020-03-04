@@ -56,9 +56,9 @@ namespace DailyPlanner.Dal
             set.Remove(found);
         }
 
-        public virtual void Upsert(TEntity entity)
+        public virtual TEntity Upsert(TEntity entity)
         {
-            _context.Set<TEntity>().Update(entity);
+           return _context.Set<TEntity>().Update(entity).Entity;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace DailyPlanner.Api
                 mc =>
                 {
                     mc.AddProfile(new ServicesMappingProfile());
+                    mc.AddProfile(new ApiMappingProfile());
                 });
         }
     }

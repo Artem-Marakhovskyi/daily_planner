@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DailyPlanner.Api
 {
-    public class Authentication
+    public class AuthenticationConfig
     {
         public static void Register(IServiceCollection services)
         {
@@ -18,13 +18,13 @@ namespace DailyPlanner.Api
                     options.RequireHttpsMetadata = false;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = true,
+                        ValidateIssuer = false,
                         ValidIssuer = AuthOptions.Issuer,
-                        ValidateAudience = true,
+                        ValidateAudience = false,
                         ValidAudience = AuthOptions.Audience,
-                        ValidateLifetime = true,
+                        ValidateLifetime = false,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(AuthOptions.SecretKey)),
-                        ValidateIssuerSigningKey = true,
+                        ValidateIssuerSigningKey = false,
                     };
                 });
         }

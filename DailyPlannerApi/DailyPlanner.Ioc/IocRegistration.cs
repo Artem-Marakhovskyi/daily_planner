@@ -25,7 +25,9 @@ namespace DailyPlanner.Ioc
         {
             serviceCollection
                 .AddEntityFrameworkSqlServer()
-                .AddDbContext<PlannerContext>(op => op.UseSqlServer(configuration.GetConnectionString("local")));
+                .AddDbContext<PlannerContext>(
+                    op => op.UseSqlServer(configuration.GetConnectionString("local")),
+                    contextLifetime: ServiceLifetime.Scoped);
         }
 
         private static void RegisterRepositories(IServiceCollection serviceCollection)

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using DailyPlanner.Dto.Notes;
 using DailyPlanner.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace DailyPlanner.Api.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class NotesController : ControllerBase
     {               
@@ -27,7 +29,8 @@ namespace DailyPlanner.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<NoteDto>> Get()
         {
-            var notes = await _notesService.GetAsync(Guid.NewGuid()/* creator id */);
+            
+            var notes = await _notesService.GetAsync(HttpContext.User.GetId().Value);
 
             return notes;
         }

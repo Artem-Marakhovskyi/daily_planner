@@ -1,4 +1,6 @@
-﻿namespace DailyPlanner.Dto.Notes
+﻿using System;
+
+namespace DailyPlanner.Dto.Notes
 {
     public class PersonDto : EntityDto
     {

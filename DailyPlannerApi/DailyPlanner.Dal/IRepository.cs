@@ -15,6 +15,6 @@ namespace DailyPlanner.Dal
             int skip, 
             int take);
         Task RemoveAsync(Guid id);
-        void Upsert(TEntity entity);
+        TEntity Upsert(TEntity entity);
     }
 }

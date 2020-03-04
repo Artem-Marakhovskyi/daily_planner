@@ -14,7 +14,8 @@ namespace DailyPlanner.Services
 
         private void CreateEntitiesMaps()
         {
-            CreateMap<Note, NoteDto>().ReverseMap();
+            CreateMap<Note, NoteDto>().ReverseMap()
+                .ForMember(s => s.Tag, opt => opt.Ignore());
             CreateMap<Person, PersonDto>().ReverseMap();
         }
     }
