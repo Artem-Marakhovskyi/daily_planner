@@ -41,7 +41,10 @@ namespace DailyPlanner.Ioc
         private static void RegisterServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<INotesService, NotesService>();
-            serviceCollection.AddScoped<IPersonService, PersonService>();
+            serviceCollection.AddScoped<IPeopleService, PeopleService>();
+            serviceCollection.AddScoped<IEventsService, EventsService>();
+            serviceCollection.AddScoped<IRemindersService, RemindersService>();
+
             serviceCollection.AddScoped<IPasswordHashManager, PasswordHashManager>();
         }
     }

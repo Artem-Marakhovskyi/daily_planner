@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DailyPlanner.Api.ViewDtos;
+using DailyPlanner.Dto;
 
 namespace DailyPlanner.Api
 {

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace DailyPlanner.Services
 {
-    public class PersonService : IPersonService
+    public class PeopleService : IPeopleService
     {
         private readonly IPasswordHashManager _passwordHashManager;
         private readonly IRepository<Person> _personRepository;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _uof;
 
-        public PersonService(
+        public PeopleService(
             IPasswordHashManager passwordHashManager,
             IRepository<Person> personRepository,
             IUnitOfWork uof,

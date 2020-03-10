@@ -13,8 +13,4 @@
     <ProjectReference Include="..\DailyPlanner.Infrastructure\DailyPlanner.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DailyPlanner.Services
 {
-    public interface IPersonService
+    public interface IPeopleService
     {
         Task<PersonDto> GetAsync(string email, string password);
 

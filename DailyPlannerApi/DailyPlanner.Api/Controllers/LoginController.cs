@@ -17,11 +17,11 @@ namespace DailyPlanner.Api.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly IPersonService _personService;
+        private readonly IPeopleService _personService;
         private readonly IMapper _mapper;
 
         public LoginController(
-            IPersonService personService,
+            IPeopleService personService,
             IMapper mapper)
         {
             _personService = personService;
