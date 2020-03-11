@@ -10,6 +10,5 @@
   <ItemGroup>
     <Folder Include="Notes\" />
     <Folder Include="Reminders\" />
-    <Folder Include="Chat\" />
   </ItemGroup>
 </Project>

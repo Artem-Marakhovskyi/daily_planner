@@ -1,6 +1,9 @@
 ﻿using DailyPlanner.Dal;
 using DailyPlanner.Entities;
+using DailyPlanner.Entities.Calendar;
+using DailyPlanner.Entities.Chat;
 using DailyPlanner.Entities.Notes;
+using DailyPlanner.Entities.Reminders;
 using DailyPlanner.Infrastructure;
 using DailyPlanner.Services;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +37,13 @@ namespace DailyPlanner.Ioc
             serviceCollection.AddScoped<IRepository<Tag>, Repository<Tag>>();
             serviceCollection.AddScoped<IRepository<Note>, Repository<Note>>();
             serviceCollection.AddScoped<IRepository<Person>, Repository<Person>>();
+            serviceCollection.AddScoped<IRepository<Event>, Repository<Event>>();
+            serviceCollection.AddScoped<IRepository<EventSharing>, Repository<EventSharing>>();
+            serviceCollection.AddScoped<IRepository<Reminder>, Repository<Reminder>>();
+            serviceCollection.AddScoped<IRepository<ReminderSharing>, Repository<ReminderSharing>>();
+            serviceCollection.AddScoped<IRepository<Chatroom>, Repository<Chatroom>>();
+            serviceCollection.AddScoped<IRepository<ChatroomParticipation>, Repository<ChatroomParticipation>>();
+            serviceCollection.AddScoped<IRepository<Message>, Repository<Message>>();
 
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
         }
@@ -44,6 +54,8 @@ namespace DailyPlanner.Ioc
             serviceCollection.AddScoped<IPeopleService, PeopleService>();
             serviceCollection.AddScoped<IEventsService, EventsService>();
             serviceCollection.AddScoped<IRemindersService, RemindersService>();
+            serviceCollection.AddScoped<IChatService, ChatService>();
+            serviceCollection.AddScoped<IMessagesService, MessagesService>();
 
             serviceCollection.AddScoped<IPasswordHashManager, PasswordHashManager>();
         }

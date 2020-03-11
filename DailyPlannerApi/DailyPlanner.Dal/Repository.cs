@@ -57,7 +57,14 @@ namespace DailyPlanner.Dal
 
         public virtual TEntity Upsert(TEntity entity)
         {
-           return _context.Set<TEntity>().Update(entity).Entity;
+            if (_context.Set<TEntity>().Find(entity.Id) == null)
+            {
+                return _context.Set<TEntity>().Add(entity).Entity;
+            }
+            else
+            {
+                return _context.Set<TEntity>().Update(entity).Entity;
+            }
         }
     }
 }

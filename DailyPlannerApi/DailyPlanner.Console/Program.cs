@@ -77,7 +77,7 @@ namespace DailyPlanner.Console
         private static DbContextOptionsBuilder GetContextOptionsBuilder()
         {
             return new DbContextOptionsBuilder()
-                .UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=PlannerDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                .UseSqlServer("Server=tcp:daily-planner.database.windows.net,1433;Initial Catalog=DailyPlannerDb;Persist Security Info=False;User ID=amara;Password=Password123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         }
     }

@@ -19,6 +19,8 @@ namespace DailyPlanner.Entities.Chat
 
         public MessageType Type { get; set; }
 
+        public Guid? ReferenceId { get; set; }
+
         public string Text { get; set; }
 
         public DateTimeOffset DateSent { get; set; }

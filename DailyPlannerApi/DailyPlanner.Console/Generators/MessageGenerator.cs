@@ -39,6 +39,7 @@ namespace DailyPlanner.Console.Generators
                     Text = string.Join(" ", Enumerable.Range(0, _random.Next(5))
                            .Select(e => _textGenerator.GetSentence())),
                     DateReceived = dateReceived,
+                    ReferenceId = null,
                     DateSent = dateSent,
                     DateRead = dateRead,
                     Type = MessageType.Text
