@@ -71,7 +71,7 @@ namespace DailyPlanner.Api.Controllers
                         SecurityAlgorithms.HmacSha256));
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
-            return new LoginResponseDto(encodedJwt, person.Email, person.FirstName, person.LastName);
+            return new LoginResponseDto(encodedJwt, person.Email, person.FirstName, person.LastName, person.Id.ToString());
         }
     }
 }

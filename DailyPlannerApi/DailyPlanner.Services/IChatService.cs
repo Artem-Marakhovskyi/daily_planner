@@ -11,7 +11,7 @@ namespace DailyPlanner.Services
     {
         Task<IEnumerable<ChatroomDto>> GetAsync(Guid participantId);
 
-        Task<IEnumerable<ChatroomDto>> UpsertAsync(IEnumerable<ChatroomDto> chatroomsDto);
+        Task<IEnumerable<ChatroomDto>> UpsertAsync(IEnumerable<ChatroomDto> chatroomsDtos);
 
         Task<List<ChatroomParticipationDto>> AddParticipantsAsync(IEnumerable<ChatroomParticipationDto> chatroomParticipationDtos);
     }
