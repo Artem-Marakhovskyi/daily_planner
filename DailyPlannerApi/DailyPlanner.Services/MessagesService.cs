@@ -45,18 +45,24 @@ namespace DailyPlanner.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<MessageDto>> GetAsync(Guid userId)
+        public async Task<IEnumerable<MessageDto>> GetAsync(Guid chatroomId)
         {
-            var chatroomIds = (await _participationRepository
-                .GetAsync(e => e.ParticipantId == userId, 0, int.MaxValue))
-                .Select(e => e.ChatroomId)
-                .ToList();
+            var tags = await _tagRepository.GetAsync();
 
             var messages = (await _messageRepository
-                .GetAsync(e => chatroomIds.Contains(e.ChartoomId), 0, int.MaxValue))
+                .GetAsync(e => e.ChartoomId == chatroomId, 0, int.MaxValue))
                 .ToList();
 
-            return _mapper.Map<List<MessageDto>>(messages);
+            var messageDtos = new List<MessageDto>();
+            foreach (var message in messages)
+            {
+                var tempMessage = _mapper.Map<MessageDto>(message);
+                tempMessage.Tag = tags.First(e => e.Id == message.TagId).Description;
+
+                messageDtos.Add(tempMessage);
+            }
+
+            return messageDtos;
         }
 
         public async Task<IEnumerable<MessageDto>> UpsertAsync(IEnumerable<MessageDto> messageDtos)

@@ -3,6 +3,7 @@ using DailyPlanner.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,6 +31,14 @@ namespace DailyPlanner.Api.Controllers
             var message = await _messagesService.UpsertAsync(messageDtos);
 
             return message;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<MessageDto>> Get(Guid chatroomId)
+        {
+            var messages = await _messagesService.GetAsync(chatroomId);
+
+            return messages;
         }
     }
 }
