@@ -4,6 +4,7 @@ using DailyPlanner.Dto;
 using DailyPlanner.Entities;
 using DailyPlanner.Infrastructure;
 using DailyPlanner.Services.Exceptions;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -61,6 +62,27 @@ namespace DailyPlanner.Services
                     password,
                     person.PasswordHash,
                     person.Salt))
+            {
+                return null;
+            }
+
+            return _mapper.Map<PersonDto>(person);
+        }
+
+        public async Task<IEnumerable<PersonDto>> GetAsync()
+        {
+            var personEntities = await _personRepository.GetAsync();
+
+            return _mapper.Map<List<PersonDto>>(personEntities);
+        }
+
+        public async Task<PersonDto> GetAsync(string email)
+        {
+            var people = await _personRepository
+                .GetAsync(e => e.Email == email, 0, 1);
+
+            var person = people.FirstOrDefault();
+            if (person == null)
             {
                 return null;
             }
