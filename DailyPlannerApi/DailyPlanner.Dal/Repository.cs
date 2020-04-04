@@ -57,14 +57,14 @@ namespace DailyPlanner.Dal
 
         public virtual TEntity Upsert(TEntity entity)
         {
-            if (_context.Set<TEntity>().Find(entity.Id) == null)
+            var local = _context.Set<TEntity>().FirstOrDefault(e => e.Id == entity.Id);
+            if (local != null)
             {
-                return _context.Set<TEntity>().Add(entity).Entity;
+                _context.Entry(local).State = EntityState.Deleted;
             }
-            else
-            {
-                return _context.Set<TEntity>().Update(entity).Entity;
-            }
+            _context.Set<TEntity>().Add(entity);
+
+            return entity;
         }
     }
 }

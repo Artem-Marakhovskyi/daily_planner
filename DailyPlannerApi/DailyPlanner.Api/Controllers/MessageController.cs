@@ -26,7 +26,7 @@ namespace DailyPlanner.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IEnumerable<MessageDto>> Post(IEnumerable<MessageDto> messageDtos)
+        public async Task<IEnumerable<MessageDto>> Post(List<MessageDto> messageDtos)
         {
             var message = await _messagesService.UpsertAsync(messageDtos);
 

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using DailyPlanner.Entities;
+using DailyPlanner.Entities.Notes;
 using Microsoft.EntityFrameworkCore;
 
 namespace DailyPlanner.Dal
