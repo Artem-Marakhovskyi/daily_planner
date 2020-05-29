@@ -20,35 +20,36 @@ namespace DailyPlanner.Console.Generators
         {
             _chatroomParticipations = new List<ChatroomParticipation>();
 
-            for (int i = 0; i < count; i++)
+            foreach (var chatroom in chatrooms)
             {
-                var participation = new ChatroomParticipation
+                var firstP = people[_random.Next(people.Count)];
+                var secondP = people[_random.Next(people.Count)];
+                while (firstP.Id == secondP.Id)
+                {
+                    secondP = people[_random.Next(people.Count)];
+                }
+
+                var participation1 = new ChatroomParticipation
                 {
                     Id = Guid.NewGuid(),
-                    ChatroomId = chatrooms[_random.Next(chatrooms.Count)].Id,
+                    ChatroomId = chatroom.Id,
                     CreatedAt = DateTime.Now,
-                    ParticipantId = people[_random.Next(people.Count)].Id
+                    ParticipantId = firstP.Id
                 };
 
-                while (_chatroomParticipations.Any(c => c.ParticipantId == participation.ParticipantId
-                    && c.ChatroomId == participation.ChatroomId))
+                var participation2 = new ChatroomParticipation
                 {
-                    participation.ParticipantId = people[_random.Next(people.Count)].Id;
-                }
+                    Id = Guid.NewGuid(),
+                    ChatroomId = chatroom.Id,
+                    CreatedAt = DateTime.Now,
+                    ParticipantId = secondP.Id
+                };
 
-                _chatroomParticipations.Add(participation);
+                _chatroomParticipations.Add(participation1);
+                _chatroomParticipations.Add(participation2);
             }
 
-            List<Guid> excludeGuid = new List<Guid>();
-            foreach (var item in _chatroomParticipations)
-            {
-                if (_chatroomParticipations.Where(e => e.ChatroomId == item.Id).Count() == 1)
-                {
-                    excludeGuid.Add(item.Id);
-                }
-            }
-
-            return _chatroomParticipations.Where(e => !excludeGuid.Contains(e.Id)).ToList();
+            return _chatroomParticipations.ToList();
         }
     }
 }

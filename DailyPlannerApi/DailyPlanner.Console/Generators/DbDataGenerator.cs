@@ -58,11 +58,11 @@ namespace DailyPlanner.Console.Generators
             System.Console.WriteLine("REMINDER generated. 6/10");
             var reminderSharings = _reminderSharingGenerator.Generate(people, reminders, 2000);
             System.Console.WriteLine("REMINDER SHARING generated. 7/10");
-            var chatrooms = _chatroomGenerator.Generate(people.Count * 8);
+            var chatrooms = _chatroomGenerator.Generate(people.Count * 3);
             System.Console.WriteLine("CHATROOM generated. 8/10");
             var chatroomParticipation = _chatroomParticipationGenerator.Generate(people, chatrooms, chatrooms.Count * 2);
             System.Console.WriteLine("CHATROOM PARTICIPANTS generated. 9/10");
-            var messages = _messageGenerator.Generate(people, chatrooms, tags, 50000);
+            var messages = _messageGenerator.Generate(chatroomParticipation, chatrooms, tags, 50);
             System.Console.WriteLine("MESSAGES generated. 10/10");
 
             return new DbData
